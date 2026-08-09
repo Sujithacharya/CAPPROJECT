@@ -1,0 +1,28 @@
+{
+    "welcomeFile": "managepurchaseorder/webapp/index.html",
+    "authenticationMethod": "route",
+    "sessionTimeout": 10,
+    "pluginMetadataEndpoint": "odata/v4/CatalogService/$metadata",
+    "routes": [
+        {
+            "source": "^/managepurchaseorder/webapp/(.*)",
+            "authenticationType": "xsuaa",
+            "localDir": "managepurchaseorder/webapp",
+            "csrfProtection": true,
+            "target": "$1"
+        },
+        {
+            "source": "^/user-api/currentUser$",
+            "target": "/currentUser",
+            "service": "sap-approuter-userapi"
+        },
+        {
+            "source": "^/(.*)$",
+            "destination": "srv-api"
+        }
+    ],
+    "logout": {
+        "logoutEndpoint": "/my/logout",
+        "logoutPage": "https://www.sap.com"
+    }
+}

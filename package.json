@@ -1,0 +1,56 @@
+{
+  "name": "mycapapp",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "dependencies": {
+    "@cap-js-community/odata-v2-adapter": "^1.15.9",
+    "@cap-js/hana": "^3",
+    "@sap/xssec": "^4.13.3",
+    "express": "^4"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-managepurchaseorder": "cds watch --open sujith.ui.managepurchaseorder/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "private": true,
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/managepurchaseorder"
+  ],
+  "devDependencies": {
+    "@cap-js/sqlite": "^3.0.2",
+    "@sap/cds": "^10.0.5",
+    "@sap/cds-dk": "10.0.6"
+  },
+  "cds": {
+    "requires": {
+      "auth": {
+        "[development]": {
+          "kind": "mocked",
+          "users": {
+            "sujith": {
+              "password": "sujith",
+              "roles": [
+                "Viewer"
+              ],
+              "attr": {
+                "Spiderman": "My Bank of San Francisco"
+              }
+            },
+            "karthik": {
+              "password": "karthik",
+              "roles": [
+                "Editor"
+              ]
+            }
+          }
+        },
+        "[production]": {
+          "kind": "xsuaa"
+        }
+      }
+    }
+  }
+}

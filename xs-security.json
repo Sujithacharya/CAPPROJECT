@@ -1,0 +1,59 @@
+{
+  "xsappname": "mycapapp",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Display",
+      "description": "display"
+    },
+    {
+      "name": "$XSAPPNAME.Edit",
+      "description": "edit"
+    },
+    {
+      "name": "$XSAPPNAME.Delete",
+      "description": "delete"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "Spiderman",
+      "description": "Bank Name which provides the row level security",
+      "valueType": "string"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Viewer",
+      "description": "View all PO and Employee data",
+      "default-role-name": "Viewer: Authorized to Read All PO and Employees data",
+      "scope-references": [
+        "$XSAPPNAME.Display"
+      ],
+      "attribute-references": [
+        "Spiderman"
+      ]
+    },
+    {
+      "name": "Editor",
+      "description": "Edit, delete PO and Employees data",
+      "scope-references": [
+        "$XSAPPNAME.Edit",
+        "$XSAPPNAME.Delete"
+      ]
+    }
+  ],
+  "authorities": [
+    "$ACCEPT_GRANTED_AUTHORITIES"
+  ],
+  "oauth2-configuration": {
+    "token-validity": 9000,
+    "redirect-uris": [
+      "https://*.cfapps.us10-001.hana.ondemand.com"
+    ],
+    "credential-types": [
+      "binding-secret",
+      "x509"
+    ]
+  },
+  "xsenableasyncservice": "true"
+}
