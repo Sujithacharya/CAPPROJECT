@@ -7,7 +7,7 @@
         {
             "source": "^/managepurchaseorder/webapp/(.*)",
             "authenticationType": "xsuaa",
-            "localDir": "managepurchaseorder/webapp",
+            "localDir": "managepurchaseorder/webapp/",
             "csrfProtection": true,
             "target": "$1"
         },
@@ -18,7 +18,7 @@
         },
         {
             "source": "^/(.*)$",
-            "destination": "srv-api"
+            "destination": "srv-api" 
         }
     ],
     "logout": {
