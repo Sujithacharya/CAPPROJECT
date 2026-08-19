@@ -2,7 +2,6 @@
     "welcomeFile": "managepurchaseorder/webapp/index.html",
     "authenticationMethod": "route",
     "sessionTimeout": 10,
-    "pluginMetadataEndpoint": "odata/v4/CatalogService/$metadata",
     "routes": [
         {
             "source": "^/managepurchaseorder/webapp/(.*)",

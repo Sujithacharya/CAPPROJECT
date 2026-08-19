@@ -48,7 +48,7 @@
   "oauth2-configuration": {
     "token-validity": 9000,
     "redirect-uris": [
-      "https://*.cfapps.us10-001.hana.ondemand.com"
+      "https://*.cfapps.us10-001.hana.ondemand.com/login/callback"
     ],
     "credential-types": [
       "binding-secret",
